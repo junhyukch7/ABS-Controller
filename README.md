@@ -25,12 +25,14 @@ Tshaft는 엔진에서 발생한 출력이 shaft를 통해 전달되는 토크�
 
 - Tire model
 
+![tire](https://user-images.githubusercontent.com/79674592/110266212-ac0fbd00-8000-11eb-8e76-dce8f3d38e68.PNG)
+
 출력이 각각의 구동계를 거쳐 최종으로 타이어를 지나게 되면 Traction Force가 발생하게 된다. 해당 종방향 모델에서는 Bakker - Pacejka의 Magic Tire Formula 공식을 이용하여 Froad를 정의한다.
 ![froad_eq](https://user-images.githubusercontent.com/79674592/110265147-40c4eb80-7ffe-11eb-81da-1eca85d4f53c.PNG)
 
-해당 공식을 사용하기 위해 Tire에서 발생하는 slip은 다음과 같이 정의한다.
+해당 공식을 사용하기 위해 Tire에서 발생하는 slip ratio는 다음과 같이 정의한다.
 
 ![slip_eq](https://user-images.githubusercontent.com/79674592/110265266-8a153b00-7ffe-11eb-9068-7ee87667205b.PNG)
 
-v는 차량 body의 속도를 의미하며 가속시 w가 커지면서 slip이 증가하게 되고 제동시 w가 줄어 slip이 줄게된다.
+v는 차량 body의 속도를 의미하며 가속시 w가 커지면서 slip이 증가하게 되고 제동시 w가 줄어 slip이 줄게된다. ratio를 구하기 위해 hw-v가 0보다 큰 경우 hw로 나누게 되고 반대인 경우 v로 나누게 된다.
 
