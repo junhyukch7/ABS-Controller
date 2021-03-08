@@ -1,2 +1,36 @@
 # ABS-Controller
 ABS(Anti lock Braking System) using longitudinal dynamics
+
+1. Longitudinal model (종방향)
+
+![fbd_vehicle](https://user-images.githubusercontent.com/79674592/110263256-7adfbe80-7ff9-11eb-9783-080b9f42e1d5.PNG)
+
+차량 동역학은 크게 종방향,횡방향,수직방향으로 나뉘는데 이 3가지의 움직임은 독립적이지 않다. ABS 컨트롤러의 성능을 검증하기 위해 사용한 차량동역학 모델을 사용하였다.
+
+- Vehicle dynamics equation
+
+위 자유물체도를 기반으로 vehicle dynamics 방정식을 세워보면 다음과 같다. 
+![vehicle_eq](https://user-images.githubusercontent.com/79674592/110263780-073eb100-7ffb-11eb-9da8-120c2f9de80f.PNG)
+
+뉴턴의 운동법칙을 이용한 평형식이며 Froad는 차량이 앞으로 나아가는 traction force를 의미하고 Froll은 앞바퀴와 뒷바퀴에서 발생하는 구름저항을 의미한다. Fair는 공기저항을 의미하고 Mgsin(theta)는 경사에 의한 힘으로 나누었다.
+
+- Wheel Dynamics equation
+
+휠에서는 회전운동이 발생하기 때문에 필히 관성모멘트가 존재한다. 관성모멘트와 토크의 관계는 다음과 같이 나타낼 수 있다. ![inerita_eq](https://user-images.githubusercontent.com/79674592/110264252-3c97ce80-7ffc-11eb-9674-4ddf3a6d67a3.PNG)
+
+이를 기반으로 Wheel Dynamics 방정식은 다음과 같이 도출할 수 있다.
+![wheel_eq](https://user-images.githubusercontent.com/79674592/110264413-95fffd80-7ffc-11eb-9582-58d376cff10b.PNG)
+
+Tshaft는 엔진에서 발생한 출력이 shaft를 통해 전달되는 토크이고 Brake는 제동시 발생하는 토크를 의미한다. 마지막으로 (heff * Froad)는 지면과의 접촉에서 발생한 마찰력을 의미한다.
+
+- Tire model
+
+출력이 각각의 구동계를 거쳐 최종으로 타이어를 지나게 되면 Traction Force가 발생하게 된다. 해당 종방향 모델에서는 Bakker - Pacejka의 Magic Tire Formula 공식을 이용하여 Froad를 정의한다.
+![froad_eq](https://user-images.githubusercontent.com/79674592/110265147-40c4eb80-7ffe-11eb-81da-1eca85d4f53c.PNG)
+
+해당 공식을 사용하기 위해 Tire에서 발생하는 slip은 다음과 같이 정의한다.
+
+![slip_eq](https://user-images.githubusercontent.com/79674592/110265266-8a153b00-7ffe-11eb-9068-7ee87667205b.PNG)
+
+v는 차량 body의 속도를 의미하며 가속시 w가 커지면서 slip이 증가하게 되고 제동시 w가 줄어 slip이 줄게된다.
+
