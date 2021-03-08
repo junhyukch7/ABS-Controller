@@ -39,6 +39,7 @@ v는 차량 body의 속도를 의미하며 가속시 w가 커지면서 slip이 �
 - Brake model
 
 ![brake_Eq](https://user-images.githubusercontent.com/79674592/110267728-baaba380-8003-11eb-9155-2f75abcb092c.PNG)
+
 ![brake spec](https://user-images.githubusercontent.com/79674592/110272789-5e01b600-800e-11eb-88e8-d5904c2e4abd.PNG)
 
 브레이크 로직은 다음과 같다. 유압식 브레이크는 브레이크를 밟는 압력(Pw)이 브레이크 피스톤을 밀어내고 있는 스프링 압력(Ppo)보다 더 커야 브레이크 토크가 발생하게 된다. 또한 브레이크 레버를 밟는 힘은 유압의 힘으로 전환되기까지 일정기간의 Delay가 존재하고 브레이크의 압력은 First order Transfer-Function에 따라 브레이크 압력이 부드럽게 증가한다.
