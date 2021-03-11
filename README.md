@@ -61,7 +61,10 @@ v는 차량 body의 속도를 의미하며 가속시 w가 커지면서 slip이 �
 
 - Result
 
+1. slip ratio
 ![ABS_slip](https://user-images.githubusercontent.com/79674592/110792668-05a11180-82b7-11eb-90e8-c75886a00cc4.png)
+
+2. speed
 ![ABS_speed](https://user-images.githubusercontent.com/79674592/110792689-0b96f280-82b7-11eb-8af9-2b73af1cc048.png)
 
 Dry condition 과 Wet condition에서는 ABS가 작동하지 않고 제동한 것을 확인 할 수 있다. Snow condition에서부터 설계한대로 ABS가 작동하며 제동하는 모습을 그래프를 통해 확인 할수 있다. 
