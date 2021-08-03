@@ -16,7 +16,8 @@ ABS(Anti lock Braking System) using longitudinal dynamics
 
 - Wheel Dynamics equation
 
-휠에서는 회전운동이 발생하기 때문에 필히 관성모멘트가 존재한다. 관성모멘트와 토크의 관계는 다음과 같이 나타낼 수 있다. ![inerita_eq](https://user-images.githubusercontent.com/79674592/110264252-3c97ce80-7ffc-11eb-9674-4ddf3a6d67a3.PNG)
+휠에서는 회전운동이 발생하기 때문에 필히 관성모멘트가 존재한다. 관성모멘트와 토크의 관계는 다음과 같이 나타낼 수 있다.
+![inerita_eq](https://user-images.githubusercontent.com/79674592/110264252-3c97ce80-7ffc-11eb-9674-4ddf3a6d67a3.PNG)
 
 이를 기반으로 Wheel Dynamics 방정식은 다음과 같이 도출할 수 있다.
 ![wheel_eq](https://user-images.githubusercontent.com/79674592/110264413-95fffd80-7ffc-11eb-9582-58d376cff10b.PNG)
@@ -34,7 +35,7 @@ Tshaft는 엔진에서 발생한 출력이 shaft를 통해 전달되는 토크�
 
 ![slip_eq](https://user-images.githubusercontent.com/79674592/110265266-8a153b00-7ffe-11eb-9068-7ee87667205b.PNG)
 
-v는 차량 body의 속도를 의미하며 가속시 w가 커지면서 slip이 증가하게 되고 제동시 w가 줄어 slip이 줄게된다. ratio를 구하기 위해 hw-v가 0보다 큰 경우 hw로 나누게 되고 반대인 경우 v로 나누게 된다.
+v는 차량 body의 속도를 의미하며 가속시 w(각속도)가 커지면서 slip이 증가하게 되고 제동시 w(각속도)가 줄어 slip이 줄게된다. ratio를 구하기 위해 hw-v가 0보다 큰 경우 hw(선속도)로 나누게 되고 반대인 경우 v로 나누게 된다.
 
 - Brake model
 
